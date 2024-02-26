@@ -7,12 +7,12 @@ we can access. I can "see" my present location visually with the help of the gra
 interface - I could be looking at my Desktop, or the contents of a folder, for example.
 In a Linux command-line interface, we lack the same visual queues to tell us what our
 location is. Instead, we use a command - ``pwd`` (print working directory) - to tell
-us our present location. Try executing this command on Lonestar6:
+us our present location. Try executing this command on Frontera:
 
 .. code-block:: console
 
    $ pwd
-   /home1/03439/wallen
+   /home1/02555/lima
 
 This home location on the Linux filesystem is unique for each user, and it is roughly
 analogous to C:\\Users\\username on Windows, or /Users/username on Mac.
@@ -45,28 +45,26 @@ a folder on Windows or Mac:
 .. code-block:: console
 
    $ pwd
-   /home/03439/wallen/
+   /home1/02555/lima
    $ cd folder1
    $ pwd
-   /home1/03439/wallen/folder1
+   /home1/02555/lima/folder1
 
-Now that we are inside ``folder1``, make a few sub-folders:
+Now that we are inside ``folder1``, make a sub-folder:
 
 .. code-block:: console
 
-   $ mkdir subfolderA
-   $ mkdir subfolderB
-   $ mkdir subfolderC
+   $ mkdir subfolder
    $ ls
-   subfolderA subfolderB subfolderC
+   subfolder
 
-Use ``cd`` to Navigate into ``subfolderA``, then use ``ls`` to list the contents. What do you expect to see?
+Use ``cd`` to Navigate into ``subfolder``, then use ``ls`` to list the contents. What do you expect to see?
 
 .. code-block:: console
 
-   $ cd subfolderA
+   $ cd subfolder
    $ pwd  
-   /home/03439/wallen/folder1/subfolderA
+   /home1/02555/lima/folder1/subfolder
    $ ls
 
 There is nothing there because we have not made anything yet. Next, we will navigate back to the 
@@ -77,10 +75,10 @@ the complete path of where we want to go:
 .. code-block:: console
 
    $ pwd
-   /home1/03439/wallen/folder1/subfolderA
-   $ cd /home1/03439/wallen/folder1
+   /home1/02555/lima/folder1/subfolder
+   $ cd /home1/02555/lima/folder1
    $ pwd
-   /home1/03439/wallen/folder1/
+   /home1/02555/lima
 
 Or, we could use a shortcut, ``..``, which refers to the **parent folder** - one level higher 
 than the present location:
@@ -88,22 +86,21 @@ than the present location:
 .. code-block:: console
 
    $ pwd
-   /home1/03439/wallen/folder1
+   /home1/02555/lima/folder1
    $ cd ..
    $ pwd
-   /home1/03439/wallen
+   /home1/02555/lima
 
 We are back in our home directory. Finally, use the  ``rmdir`` (remove directory) command to remove 
 folders. This will not work on folders that have any contents (more on this later):
 
 .. code-block:: console
 
-   $ mkdir junkfolder
-   $ ls
-   folder1 folder2 folder3 junkfolder
-   $ rmdir junkfolder
    $ ls
    folder1 folder2 folder3
+   $ rmdir folder3
+   $ ls
+   folder1 folder2
 
 A bonus command available on some Linux operating systems is called ``tree``. The ``tree`` command 
 displays files and folders in a hierarchical view. Use another Linux shortcut, ``.``, to indicate 
@@ -114,11 +111,8 @@ that you want to list files and folders in your **present location**.
    $ tree .
    .
    |-- folder1
-   |   |-- subfolderA
-   |   |-- subfolderB
-   |   `-- subfolderC
+   |   |-- subfolder
    |-- folder2
-   `-- folder3
 
 Before we move on, let's remove the directories we have made, using ``rm -r`` to remove our parent 
 folder ``folder1`` and its subfolders. The ``-r`` command line option recursively removes subfolders 
@@ -128,14 +122,13 @@ and files located "down" the parent directory. ``-r`` is required for non-empty 
 
    $ rm -r folder1
    $ ls 
-   folder2 folder3
+   folder2
 
-Which command should we use to remove ``folder2`` and ``folder3``?
+Which command should we use to remove ``folder2``?
 
 .. code-block:: console
 
    $ rmdir folder2
-   $ rmdir folder3
    $ ls
 
 Why could we use ``rmdir`` on ``folder2`` and ``folder3``, but not on ``folder1``?

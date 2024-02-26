@@ -13,8 +13,8 @@ instrument. Users need to learn how to:
 * Run experiments (jobs)
 * Interpret the results (data analysis / vis)
 
-.. image:: ../intro_to_hpc/images/hpc_schematic.png
-   :target: ../intro_to_hpc/images/hpc_schematic.png
+.. image:: ./images/hpc_schematic.png
+   :target: ./images/hpc_schematic.png
    :alt: HPC System Architecture
 
 **Login vs. Compute Nodes**

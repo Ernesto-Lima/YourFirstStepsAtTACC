@@ -7,23 +7,25 @@ Your First Steps at TACC
 =============================
 
 The workshop is designed to introduce skills required to perform computational
-research in domain sciences. It will cover topics in the Linux command line interface,
-the text editor VIM, and high performance computing. This workshop is intended for
+research in domain sciences. It will provide an overview of essential tasks 
+related to utilizing TACC resources effectively. This workshop is intended for
 people who have little to no experience with a command line interface, but intend
 to use a Linux workstation or HPC cluster for domain science research.
 
-
+This workshop will be fully interactive. Participants are **strongly encouraged** to follow along on the command line.
 
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   intro_to_hpc/intro_to_hpc
-   setup/setup
+   steps_at_tacc/requesting
+   steps_at_tacc/connecting
+   steps_at_tacc/transfering
+   steps_at_tacc/managing
+   steps_at_tacc/running
+   steps_at_tacc/understanding
+   steps_at_tacc/executing
    intro_to_command_line/overview
-   intro_to_job_submissions/overview
-
-
 
 Indices and tables
 ==================

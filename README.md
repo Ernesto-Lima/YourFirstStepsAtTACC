@@ -1,4 +1,4 @@
-# Introduction to Using High Performance Computing
+# Your First Steps at TACC
 
 ### Outline
 

@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Introduction to Linux and HPC
+Your First Steps at TACC
 =============================
 
 The workshop is designed to introduce skills required to perform computational

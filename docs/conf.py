@@ -19,7 +19,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'Intro to Linux and HPC'
+project = 'Your First Steps at TACC'
 copyright = '2023, Texas Advanced Computing Center'
 author = 'Texas Advanced Computing Center'
 

@@ -19,7 +19,7 @@ In this workshop, we use:
 .. code-block:: console
 
    [local]$
-   
+
 for commands on the local system and:
 
 .. code-block:: console

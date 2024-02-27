@@ -14,6 +14,20 @@ to use a Linux workstation or HPC cluster for domain science research.
 
 This workshop will be fully interactive. Participants are **strongly encouraged** to follow along on the command line.
 
+In this workshop, we use:
+
+.. code-block:: console
+
+   [local]$
+   
+for commands on the local system and:
+
+.. code-block:: console
+
+   [frontera]$ 
+   
+for commands on the remote system consistently throughout.
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:

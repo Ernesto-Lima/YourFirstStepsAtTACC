@@ -45,10 +45,12 @@ To log in to Frontera, follow the instructions for your operating system below.
 
 Mac / Linux
 ^^^^^^^^^^^
-.. code-block:: console
 
-   Open the application 'Terminal'
-   ssh username@frontera.tacc.utexas.edu
+Open the application 'Terminal'
+
+.. code-block:: console
+   
+   [local]$ ssh username@frontera.tacc.utexas.edu
    (enter password)
    (enter 6-digit token)
 

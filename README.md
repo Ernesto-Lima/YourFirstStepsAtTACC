@@ -2,21 +2,12 @@
 
 ### Outline
 
-Node and HPC Basics
+This training will provide an overview of essential tasks related to utilizing TACC resources effectively, including:
 
-* User responsibility on a shared resource
-* CPU, cores, nodes, memory, storage
-* Login nodes vs. Compute nodes
-* Home vs. Work vs. Scratch vs. Tmp vs. Corral vs. Ranch
-
-Command Line Environment
-
-* Creating and changing folders
-* Data movement
-* Editing files
-* Getting data onto TACC systems
-
-Submitting a Job
-
-* Interactive sessions using idev
-* Batch job submission
+* the process of requesting an allocation
+* connecting to the machines
+* transferring files to and from the system
+* utilizing an idev session for interactive work
+* managing modules
+* understanding Slurm job submission files
+* executing basic job management tasks (e.g. job submission, cancellation, and monitoring)

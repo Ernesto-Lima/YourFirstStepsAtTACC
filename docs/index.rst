@@ -39,7 +39,6 @@ for commands on the remote system consistently throughout.
    steps_at_tacc/running
    steps_at_tacc/understanding
    steps_at_tacc/executing
-   intro_to_command_line/overview
 
 Indices and tables
 ==================

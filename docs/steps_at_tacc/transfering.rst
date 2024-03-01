@@ -32,11 +32,12 @@ We can create some folders using the ``mkdir`` (make directory) command. The wor
 .. code-block:: console
 
    [frontera]$ mkdir folder1
+   [frontera]$ mkdir folder2
 
 .. code-block:: console
 
    [frontera]$ ls
-   folder1
+   folder1 folder2
 
 Now we have some folders to work with. To "open" a folder, navigate into that folder 
 using the ``cd`` (change directory) command. This process is analogous to double-clicking 
@@ -78,7 +79,7 @@ the complete path of where we want to go:
    /home1/02555/lima/folder1/subfolder
    [frontera]$ cd /home1/02555/lima/folder1
    [frontera]$ pwd
-   /home1/02555/lima
+   /home1/02555/lima/folder1
 
 Or, we could use a shortcut, ``..``, which refers to the **parent folder** - one level higher 
 than the present location:
@@ -155,7 +156,7 @@ Note: If you wanted to copy ``my_file`` from ``$SCRATCH``, the path you would sp
  
 Instead of files, full directories can be copied using the "recursive" flag (``scp -r ...``). 
 
-This is just the basics of copying files. See example ``scp`` usage `here-1 <https://en.wikipedia.org/wiki/Secure_copy>`_.
+This is just the basics of copying files. See example ``scp`` usage `here <https://en.wikipedia.org/wiki/Secure_copy>`_.
 
 Exercise
 ^^^^^^^^

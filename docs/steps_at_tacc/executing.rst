@@ -1,60 +1,127 @@
 Executing Basic Job Management Tasks
 ====================================
 
-
-* executing basic job management tasks (e.g. job submission, cancellation, and monitoring)
-
-First, we must know an application we want to run, and a research question we want to ask. This generally comes from your own research. For this example, we want to use the application called ``autodock_vina`` to check how well a small molecule ligand fits within a protein binding site. All the data required for this job is in a subdirectory called ``data``:
-
-.. code-block:: console
-
-   $ pwd
-   /home1/03439/wallen/IntroToLinuxHPC/Lab04
-   $ ls
-   data  job.slurm  results
-   $ ls data/
-   configuration_file.txt  ligand.pdbqt  protein.pdbqt
-   $ ls results/
-        # nothing here yet
-
-Next, we need to fill out ``job.slurm`` to request the necessary resources. I have some experience with ``autodock_vina``, so I can reasonably predict how much we will need. When running your first jobs with your applications, it will take some trial and error, and reading online documentation, to get a feel for how many resources you should use. Open ``job.slurm`` with VIM and fill out the following information:
+First, we must know an application we want to run, and a research question we want to ask. 
+In this example, we aim to execute a Python code that determines the larger of two numbers. 
+The code also includes a 3-second delay before finishing.
 
 .. code-block:: console
 
-   #SBATCH -J vina_job      # Job name
-   #SBATCH -o vina_job.o%j  # Name of stdout output file (%j expands to jobId)
-   #SBATCH -o vina_job.e%j  # Name of stderr error file (%j expands to jobId)
-   #SBATCH -p development   # Queue (partition) name
-   #SBATCH -N 1             # Total # of nodes (must be 1 for serial)
-   #SBATCH -n 1             # Total # of mpi tasks (should be 1 for serial)
-   #SBATCH -t 00:10:00      # Run time (hh:mm:ss)
-   #SBATCH -A               # Project/Allocation name (req'd if you have more than 1)
+   [frontera]$ cdw
+   [frontera]$ Lab01
+   [frontera]$ pwd
+   /work2/02555/lima/frontera/Lab01
+   [frontera]$ ls
+   example.slurm  example_template.slurm  my_code.py
 
-Now, we need to provide instructions to the compute node on how to run ``autodock_vina``. This information would come from the ``autodock_vina`` instruction manual. Continue editing ``job.slurm`` with VIM, and add this to the bottom:
+Next, we need to fill out ``example_template.slurm`` to request the necessary resources. 
+I know that this code will take a little more than 3 seconds, so I can reasonably predict how much we will need. 
+When running your first jobs with your applications, it will take some trial and error, and reading online documentation, 
+to get a feel for how many resources you should use. Open ``example_template.slurm`` with VIM and fill out the following information:
+
+.. code-block:: console
+
+   #!/bin/bash
+   #----------------------------------------------------
+   # Example SLURM job script to run applications on 
+   # TACCs Frontera system.
+   #
+   # Example of job submission
+   # To submit a batch job, execute:             sbatch example.slurm
+   # To show all queued jobs from user, execute: showq -u
+   # To kill a queued job, execute:              scancel <jobId>
+   #----------------------------------------------------
+
+   #SBATCH -J first_job                       # Job name
+   #SBATCH -o output.%j                       # Name of stdout output file (%j expands to jobId)
+   #SBATCH -e error.%j                        # Name of stderr error file (%j expands to jobId)
+   #SBATCH -p development                     # Queue (partition) name
+   #SBATCH -N 1                               # Total number of nodes (must be 1 for serial)
+   #SBATCH -n 1                               # Total number of threas tasks requested (should be 1 for serial)
+   #SBATCH -t 0:30:00                         # Run time (hh:mm:ss), development queue max 2:00:00
+
+Text Editing with VIM
+^^^^^^^^^^^^^^^^^^^^^
+
+VIM is a text editor used on Linux file systems.
+
+Open the file ``example_template.slurm``:
+
+.. code-block:: bash
+ 
+   [frontera]$ vim example_template.slurm
+
+There are two "modes" in VIM that we will talk about today. They are called "insert mode" and "normal mode". 
+In insert mode, the user is typing text into a file as seen through the terminal (think about typing text into TextEdit or Notepad). 
+In normal mode, the user can perform other functions like save, quit, cut and paste, find and replace, etc. 
+(think about clicking the menu options in TextEdit or Notepad). The two main keys to remember to toggle between the modes are ``i`` and ``Esc``.
+
+Entering VIM insert mode:
+
+.. code-block:: bash
+
+   > i
+
+Entering VIM normal mode:
+
+.. code-block:: bash
+
+   > Esc
+
+A summary of the most important keys to know for normal mode are (more on your cheat sheet):
+
+.. code-block:: bash
+
+   # Navigating the file:
+
+   arrow keys        move up, down, left, right
+       Ctrl+u        page up
+       Ctrl+d        page down
+
+            0        move to beginning of line
+            $        move to end of line
+
+           gg        move to beginning of file
+            G        move to end of file
+           :N        move to line N
+
+   # Saving and quitting:
+
+           :q        quit editing the file
+           :q!       quit editing the file without saving
+
+           :w        save the file, continue editing
+           :wq       save and quit
+
+For more information, see:
+  * `http://openvim.com/ <http://openvim.com/>`_
+  * Or type on the command line: ``vimtutor``
+
+
+Note: If you have more than one allocation, you will need to add the following line and include the name of your project allocation.
+
+.. code-block:: console
+
+   #SBATCH -A                                 # Project/Allocation name (req'd if you have more than 1)
+
+Now, we need to provide instructions to the compute node on how to run ``my_code.py``. We need to load python and add the command to run the code. 
+Continue editing ``example_template.slurm`` with VIM, and add this to the bottom:
 
 .. code-block:: console
 
    # Everything below here should be Linux commands
 
-   echo "starting at:"
-   date
+   module load python3
 
-   module list
-   module use /work/03439/wallen/public/modulefiles
-   module load autodock_vina/1.2.3
-   module list
+   python3 my_code.py
 
-   cd data/
-   vina --config configuration_file.txt --out ../results/output_ligands.pdbqt
-
-   echo "ending at:"
-   date
-
-The way this job is configured, it will print a starting date and time, load the appropriate modules, run ``autodock_vina``, write output to the ``results/`` directory, then print the ending date and time. Keep an eye on the ``results/`` directory for output. Once you have filled in the job description, save and quit the file. Submit the job to the queue using the ``sbatch`` command`:
+The way this job is configured, it will load the appropriate modules, and run ``my_code.py``. 
+Once you have filled in the job description, save and quit the file. 
+Submit the job to the queue using the ``sbatch`` command`:
 
 .. code-block:: console
 
-   $ sbatch job.slurm
+   $ sbatch example_template.slurm
 
 To view the jobs you have currently in the queue, use the ``showq`` or ``squeue`` commands:
 
@@ -71,26 +138,42 @@ If for any reason you need to cancel a job, use the ``scancel`` command with the
 
    $ scancel jobid
 
-For more example scripts, see this directory on Lonestar6:
+For more example scripts, see this directory on Frontera:
 
 .. code-block:: console
 
    $ ls /share/doc/slurm/
 
-If everything went well, you should have an output file named something similar to ``vina_job.o864828`` in the same directory as the ``job.slurm`` script. And, in the ``results/`` directory, you should have some output:
+If everything went well, you should have a file named ``duration.txt``, 
+an output file named something similar to ``output.o6146935``, 
+and an error file named something similar to ``error.o6146935`` in the same directory as the ``example_template.slurm`` script. 
 
 .. code-block:: console
 
-   $ cat vina_job.o864828
-       # closely examine output
+   [frontera] $ ls results
+   duration.txt  error.6146935  example.slurm  example_template.slurm  my_code.py  output.6146935
 
-   $ ls results
-   output_ligands.pdbqt
+**Congratulations! You ran a batch job on Frontera!**
 
-.. image:: ./images/autodock.png
-   :target: ./images/autodock.png
-   :alt: Autodock Output
+Review of VIM Commands Covered
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-*(Output visualized in UCSF Chimera)*
-
-**Congratulations! You ran a batch job on Lonestar6!**
++------------------------------------+-------------------------------------------------+
+| Command                            |          Effect                                 |
++====================================+=================================================+
+| ``vim file.txt``                   |  open "file.txt" and edit with ``vim``          |
++------------------------------------+-------------------------------------------------+
+| ``i``                              |  toggle to insert mode                          |
++------------------------------------+-------------------------------------------------+
+| ``<Esc>``                          |  toggle to normal mode                          |                                                 
++------------------------------------+-------------------------------------------------+
+| ``<arrow keys>``                   |  navigate the file                              |
++------------------------------------+-------------------------------------------------+
+| ``:q``                             |  quit ending the file                           |
++------------------------------------+-------------------------------------------------+
+| ``:q!``                            |  quit editing the file without saving           |
++------------------------------------+-------------------------------------------------+
+|  ``:w``                            |  save the file, continue editing                |
++------------------------------------+-------------------------------------------------+
+|  ``:wq``                           |  save and quit                                  |
++------------------------------------+-------------------------------------------------+

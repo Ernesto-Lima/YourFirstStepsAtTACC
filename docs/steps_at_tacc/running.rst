@@ -27,11 +27,18 @@ To learn about the command line options available for ``idev``, use ``idev -help
 
 Let's go over some of the most useful ``idev`` command line options that can customize your interactive session:
 
-To change the **time** limit to be lesser or greater than the default 30 minutes, users can use the ``-m`` command line option. For example, a user requesting an interactive session for an hour would use the command line option ``-m 60``.
+To change the **time** limit to be lesser or greater than the default 30 minutes, users can use the ``-m`` command line option. 
+For example, a user requesting an interactive session for an hour would use the command line option ``-m 60``.
 
-To change the **account_name** associated with the interactive session, users can use the ``-A`` command line option. This option is useful for when a user has multiple allocations they belong to. For example, if I have allocations on accounts ``TACC`` and ``Training``, I can use ``-A`` to set the allocation I want to be used like so: ``-A TACC`` or ``-A Training``.
+To change the **account_name** associated with the interactive session, users can use the ``-A`` command line option. 
+This option is useful for when a user has multiple allocations they belong to. 
+For example, if I have allocations on accounts ``TACC`` and ``Training``, 
+I can use ``-A`` to set the allocation I want to be used like so: ``-A TACC`` or ``-A Training``.
 
-To change the **queue** to be different than the default ``development`` queue, users can use the ``-p`` command line option. For example, if a user wants to launch an interactive session on one of Lonestar6's GPU nodes, they would use the command line option ``-p gpu-a100`` or ``-p gpu-a100-dev``. You can learn more about the different queues of Lonestar6 `here <https://docs.tacc.utexas.edu/hpc/lonestar6/#table5>`_.
+To change the **queue** to be different than the default ``development`` queue, users can use the ``-p`` command line option. 
+For example, if a user wants to launch an interactive session on one of Frontera GPU nodes, 
+they would use the command line option ``-p rtx`` or ``-p rtx-dev``. 
+You can learn more about the different queues of Frontera `here <https://docs.tacc.utexas.edu/hpc/frontera/#table6>`_.
 
 Note: For the scope of this section, we will be using the default ``development`` queue.  
 
@@ -47,7 +54,7 @@ If launch is successful, you will see output that includes the following excerpt
    
    ...
    -----------------------------------------------------------------
-         Welcome to the Lonestar6 Supercomputer          
+         Welcome to the Frontera Supercomputer          
    -----------------------------------------------------------------
    ...
 
@@ -60,85 +67,33 @@ If launch is successful, you will see output that includes the following excerpt
 
    -> Job is now running on masternode= c449-0015...OK
    ...
-   c449-0015(268)$
+   c205-004[clx](633)$
 
 Exercise
 ^^^^^^^^
 
-Let's revisit the job we ran in the previous section. This time, we will be going through each command we entered into ``job.slurm`` interactively.
+Let's execute a Python code that determines the larger of two numbers. 
+The code also includes a 3-second delay before finishing.
 
 .. code-block:: console
 
-   c449-0015(268)$ pwd
-   /home1/03439/wallen/IntroToLinuxHPC/Lab04
-   c449-0015(269)$ ls
-   data job.slurm results vina_job.o864828
+   c205-004[clx](634)$ cdw
+   c205-004[clx](635)$ Lab01
+   c205-004[clx](636)$ pwd
+   /work2/02555/lima/frontera/Lab01
+   c205-004[clx](637)$ ls
+   example.slurm  example_template.slurm  my_code.py
+
+Load the appropriate modules, and run ``my_code.py``. 
 
 .. code-block:: console
 
-   c449-0015(270)$ echo "starting at:"
-   starting at:
-   c449-0015(271)$ date
-   Mon Jun 29 0X:XX:XX CDT 2020
-   c449-0015(272)$ module list
-
-   Currently Loaded Modules:
-   #  it is okay if you have loaded modules from past sessions
-
-   c449-0015(273)$ module use /work/03439/wallen/public/modulefiles
-   c449-0115(275)$ module load autodock_vina/1.2.3
-   c449-0115(276)$ module list
-
-   Currently Loaded Modules:
-   1) intel/17.0.4 
-   2) boost/1.64
-   3) autodock_vina/1.1.2     #the order in which the modules are listed does not matter
-
-   c449-0015(277)$ cd data/
-   c449-0015(278)$ vina --config configuration_file.txt --out ../results/output_ligands.pdbqt 
-   #################################################################
-   # If you used AutoDock Vina in your work, please cite:          #
-   #                                                               #
-   # O. Trott, A. J. Olson,                                        #
-   # AutoDock Vina: improving the speed and accuracy of docking    #
-   # with a new scoring function, efficient optimization and       #
-   # multithreading, Journal of Computational Chemistry 31 (2010)  #
-   # 455-461                                                       #
-   #                                                               #
-   # DOI 10.1002/jcc.21334                                         #
-   #                                                               #
-   # Please see http://vina.scripps.edu for more information.      #
-   #################################################################
-
-   Detected 272 CPUs
-   WARNING: at low exhaustiveness, it may be impossible to utilize all CPUs
-   Reading input ... done.
-   Setting up the scoring function ... done.
-   Analyzing the binding site ... done.
-   Using random seed: -31156704
-   Performing search ... 
-   0%   10   20   30   40   50   60   70   80   90   100%
-   |----|----|----|----|----|----|----|----|----|----|
-   ***************************************************
-   done.
-   Refining results ... done.
-
-   mode |   affinity | dist from best mode
-        | (kcal/mol) | rmsd l.b.| rmsd u.b.
-   -----+------------+----------+----------
-      1        -12.3      0.000      0.000
-      2        -11.1      1.223      1.866
-      3        -11.0      3.000     12.459
-      4        -10.5      2.268     12.434
-      5        -10.4      2.272     13.237
-      6        -10.3      3.146     13.666
-      7        -10.3      3.553     12.345
-      8        -10.2      1.827     13.667
-      9         -9.8      2.608     12.630
-   Writing output ... done.
-
-   c449-0015(279)$ echo "ending at:"
-   c449-0015(280)$ date
-   Mon Jun 29 0X:XX:XX CDT 2020
+   c205-004[clx](638)$ module load python3
+   c205-004[clx](639)$ python3 my_code.py
+   The larger number of 51 and 20 is 51
+   c205-004[clx](640)$ ls
+   duration.txt  example.slurm  example_template.slurm  my_code.py
+   c205-004[clx](641)$ cat duration
+   Done in 3.009739637374878 seconds.
 
 To exit an interactive session, you can use the command ``logout``.

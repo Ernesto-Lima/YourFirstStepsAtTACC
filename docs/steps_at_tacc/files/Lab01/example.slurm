@@ -1,7 +1,7 @@
 #!/bin/bash
 #----------------------------------------------------
 # Example SLURM job script to run applications on 
-# TACC's Frontera system.
+# TACCs Frontera system.
 #
 # Example of job submission
 # To submit a batch job, execute:             sbatch example.slurm

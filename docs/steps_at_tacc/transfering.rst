@@ -161,10 +161,15 @@ This is just the basics of copying files. See example ``scp`` usage `here <https
 Exercise
 ^^^^^^^^
 
-1. Identify which Lonestar6 login node you are on (login1, login2, login3)
-2. Remotely login to a different Lonestar6 login node and list what files are available.
-3. Logout until you are back to your original login node.
-4. Make your own ``my_file`` on your local computer using knowledge from our previous sections and copy ``my_file`` to your ``$WORK`` file system on Lonestar6 
+1. Download the `lab files <https://github.com/Ernesto-Lima/YourFirstStepsAtTACC/raw/master/docs/steps_at_tacc/files/firststeps.zip>`_.
+
+2. Login to Frontera.
+
+3. Identify your ``$WORK`` directory path using ``cdw`` and ``pwd``.
+
+4. From your local computer, copy the file ``firststeps.zip`` to Frontera. (You will need to know where the file ``firststeps.zip`` was downloaded on your local computer and navigate to this folder.)
+
+5. Login to Frontera, navigate to your ``$WORK``, and unzip the file using ``unzip firststeps.zip``.
 
 Review of Topics Covered
 ^^^^^^^^^^^^^^^^^^^^^^^^

@@ -28,6 +28,15 @@ for commands on the local system and:
    
 for commands on the remote system consistently throughout.
 
+Requirements
+------------
+
+To participate in this workshop, you will need a TACC account and must have set up multi-factor authentication using a token app or SMS. 
+You can do this by visiting the `TACC portal <https://tacc.utexas.edu/portal/>`_, logging in, clicking on your username at the top right of the page, 
+selecting "Manage Account", and, under MFA Pairing, clicking to pair.
+
+In your **TACC portal**, you can also view your allocations, open tickets, and the systems along with their current status.
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:

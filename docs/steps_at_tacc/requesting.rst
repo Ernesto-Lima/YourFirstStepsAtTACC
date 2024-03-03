@@ -53,6 +53,18 @@ TACC offers three types of project allocations:
 
 * Research: Allocations for research projects support the computational needs of the scientific community. Research project allocations **begin on calendar quarters**, are normally for one year, and must be renewed annually for multi-year projects. Requests for new research allocations and renewals **must be submitted 30 days prior to the start of the allocation period**. Requests submitted after the due date will be considered for the next allocation period.  PIs can apply for startup project allocations until the next research project quarterly deadline.
 
++--------------------------+-------------------------+
+| Allocation Period        | New/Renewal Request Due |
++==========================+=========================+
+| January 1 - Dec 31       | December 1              |
++--------------------------+-------------------------+
+| April 1 - March 31       | March 1                 |
++--------------------------+-------------------------+
+| July 1 - June 30         | June 1                  |
++--------------------------+-------------------------+
+| October 1 - September 31 | September 1             |
++--------------------------+-------------------------+
+
 A resource justification document will be required when applying for resources. The document should be in PDF form and include a description of the research being conducted and how TACC computation resources will impact this research. It should also describe the scientific applications to be used, and an estimated plan or table justifying the number of node-hours being requested.
 
 The `TACC Resource Allocation System (TxRAS) <https://submit-tacc.xras.org/>`_ is for researchers from UT Austin, UT System and TACC Partner Institutions to request allocations. 

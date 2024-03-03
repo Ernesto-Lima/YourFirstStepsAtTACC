@@ -127,3 +127,20 @@ If everything went well, you should have an output file named something similar 
 *(Output visualized in UCSF Chimera)*
 
 **Congratulations! You ran a batch job on Lonestar6!**
+
+.. table::
+   :align: left
+   :widths: auto
+
+   =============== ===================================== ================ ================== ================= =========================
+   Queue Name      Min-Max Nodes per Job (assoc'd cores) Max Job Duration Max Nodes per User Max Jobs per User Charge Rate per node-hour
+   =============== ===================================== ================ ================== ================= =========================
+   ``flex``        1-128 nodes (7,168 cores)             48 hrs           6400 nodes         15 jobs           .8 Service Units (SUs)
+   ``development`` 1-40 nodes (2,240 cores)              2 hrs            40 nodes           1 job             1 SU
+   ``normal``      3-512 nodes (28,672 cores)            48 hrs           1836 nodes         100 jobs          1 SU
+   ``large``       513-2048 nodes (114,688 cores)        48 hrs           4096 nodes         1 job             1 SU
+   ``rtx``         22 nodes                              48 hrs           22 nodes           15 jobs           3 SUs
+   ``rtx-dev``     2 nodes                               2 hrs            2 nodes            1 job             3 SUs
+   ``nvdimm``      4 nodes                               48 hrs           8 nodes            2 jobs            2 SUs
+   ``small``       2 nodes                               48 hrs           24 nodes           20 jobs           1 SU
+   =============== ===================================== ================ ================== ================= =========================

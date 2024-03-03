@@ -47,7 +47,7 @@ Allocation Opportunities
 
 TACC offers three types of project allocations:
 
-* Startup: These projects aim to provide the PI with an initial allocation to build a case for a Research or Educational project. Startup projects usually receive **small allocations with short durations**. Allocations for up to **5,000 node-hours CPU** and **100 node hours GPU**  may be requested to gather benchmark data for a larger allocation request, or to test the suitability of the system for a particular research project. 
+* Startup: These projects aim to provide the PI with an initial allocation to build a case for a Research or Educational project. Startup projects usually receive **small allocations with short durations**. This allocation may be requested to gather benchmark data for a larger allocation request, or to test the suitability of the system for a particular research project. 
 
 * Educational: Allocations for educational projects support academic classes, with limitations on allocation sizes and availability only on specific TACC resources.
 
@@ -64,6 +64,25 @@ TACC offers three types of project allocations:
 +--------------------------+-------------------------+
 | October 1 - September 31 | September 1             |
 +--------------------------+-------------------------+
+
+.. table::
+   :align: left
+   :widths: auto
+
+   ========= ===================== ================================================================================== ==================================================================================
+   System    Startup SUs           Educational SUs                                                                    Research SUs
+   ========= ===================== ================================================================================== ==================================================================================
+   Stampede2 2,100                 2,100                                                                              21,000
+   Lonestar6 500                   500                                                                                Up to 100,000
+   Maverick2 200                   200                                                                                2,100
+   Frontera  CPU: 5,000 GPU: 3,000 `See Frontera Allocations <https://frontera-portal.tacc.utexas.edu/allocations/>`_ `See Frontera Allocations <https://frontera-portal.tacc.utexas.edu/allocations/>`_
+   ========= ===================== ================================================================================== ==================================================================================
+
+When applying for an allocation on an HPC or Visualization system, you will be asked to estimate the number of service units (SUs) you will require for the project. SUs are calculated based on the wall-clock time of your jobs (measured in hours) and the number of nodes, depending on the system, used to run a job. Each job run on the resource consumes the SUs allocated to a project.
+
+All the TACC resources listed below calculate Service Units (SUs) in terms of node-hours. Specialty nodes, such as GPU's, may be charged an additional multiplier.
+
+**SUs charged = (Number of nodes) X (job wall-clock time) X (multiplier).**
 
 A resource justification document will be required when applying for resources. The document should be in PDF form and include a description of the research being conducted and how TACC computation resources will impact this research. It should also describe the scientific applications to be used, and an estimated plan or table justifying the number of node-hours being requested.
 

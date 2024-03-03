@@ -46,3 +46,30 @@ First, navigate to the ``Lab01`` directory where we have an example job script p
    #SBATCH -A                                  # Project/Allocation name (req'd if you have more than 1)
 
    # Everything below here should be Linux commands
+
+Frontera Production Queues
+--------------------------
+
+Here, we are comparing the differences between two queues: ``development`` and ``normal``. 
+For information about other queues, please refer to the `Frontera Production Queues <https://docs.tacc.utexas.edu/hpc/frontera/#table6>`_.
+
+.. table::
+   :align: left
+   :widths: auto
+
+   ===================================== ======================== ==========================
+   Queue Name                            ``development``          ``normal``
+   ===================================== ======================== ==========================
+   Min-Max Nodes per Job (assoc'd cores) 1-40 nodes (2,240 cores) 3-512 nodes (28,672 cores)
+   Max Job Duration                      2 hrs                    48 hrs
+   Max Nodes per User                    40 nodes                 1836 nodes
+   Max Jobs per User                     1 job                    100 jobs
+   Charge Rate per node-hour             1 SU                     1 SU 
+   ===================================== ======================== ==========================
+
+**Note**: If you submit a job requesting 48 hrs in the normal queue, and it takes a total of 10 hrs to run, you will be charged as follows:
+
+**SUs charged = (Number of nodes) X (job wall-clock time) X (charge rate per node-hour).**
+
+**SUs charged = (Number of nodes) X 10 X 1.**
+

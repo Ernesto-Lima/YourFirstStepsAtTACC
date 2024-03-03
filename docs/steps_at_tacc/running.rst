@@ -8,7 +8,7 @@ run, and validate code. Accessing a single compute node is accomplished by simpl
 executing ``idev`` on any of the TACC systems.
 
 Initiating an Interactive Session
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------
 
 To learn about the command line options available for ``idev``, use ``idev -help``.
 
@@ -70,7 +70,7 @@ If launch is successful, you will see output that includes the following excerpt
    c205-004[clx](633)$
 
 Exercise
-^^^^^^^^
+--------
 
 Let's execute a Python code that determines the larger of two numbers. 
 The code also includes a 3-second delay before finishing.
@@ -91,9 +91,25 @@ Load the appropriate modules, and run ``my_code.py``.
    c205-004[clx](638)$ module load python3
    c205-004[clx](639)$ python3 my_code.py
    The larger number of 51 and 20 is 51
+
+You can check the files that were generated using ``ls``, and see the contents of the file with ``cat``.
+
+.. code-block:: console
+
    c205-004[clx](640)$ ls
    duration.txt  example.slurm  example_template.slurm  my_code.py
    c205-004[clx](641)$ cat duration
    Done in 3.009739637374878 seconds.
 
 To exit an interactive session, you can use the command ``logout``.
+
+Attention
+^^^^^^^^^
+
+In case you didn't donwload the code in the section :doc:`Transferring Files<transfering>`, you can download by doing:
+
+.. code-block:: console
+
+   [frontera]$ cdw
+   [frontera]$ wget https://github.com/Ernesto-Lima/YourFirstStepsAtTACC/raw/master/docs/steps_at_tacc/files/firststeps.zip
+   [frontera]$ unzip firststeps.zip

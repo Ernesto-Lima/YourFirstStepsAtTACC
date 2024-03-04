@@ -37,6 +37,21 @@ selecting "Manage Account", and, under MFA Pairing, clicking to pair.
 
 In your **TACC portal**, you can also view your allocations, open tickets, and the systems along with their current status.
 
+Tips for Success
+----------------
+
+Read the `documentation <https://docs.tacc.utexas.edu/>`_.
+
+* Learn node schematics, limitations, file systems, rules
+* Learn about the scheduler, queues, policies
+* Determine the right resource for the job
+
+User Responsibility on Shared Resources
+---------------------------------------
+
+HPC systems are shared resources. Your jobs and activity on a cluster, if mismanaged,
+can affect others. TACC staff are always `available to help <https://www.tacc.utexas.edu/about/help/>`_.
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:

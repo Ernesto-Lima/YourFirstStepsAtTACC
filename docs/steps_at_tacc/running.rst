@@ -65,7 +65,7 @@ If launch is successful, you will see output that includes the following excerpt
    -> job status:  PD
    -> job status:  R
 
-   -> Job is now running on masternode= c449-0015...OK
+   -> Job is now running on masternode= c205-004...OK
    ...
    c205-004[clx](633)$
 
@@ -78,27 +78,28 @@ The code also includes a 3-second delay before finishing.
 .. code-block:: console
 
    c205-004[clx](634)$ cdw
-   c205-004[clx](635)$ Lab01
-   c205-004[clx](636)$ pwd
+   c205-004[clx](635)$ unzip firststeps.zip
+   c205-004[clx](636)$ cd Lab01
+   c205-004[clx](637)$ pwd
    /work2/02555/lima/frontera/Lab01
-   c205-004[clx](637)$ ls
+   c205-004[clx](638)$ ls
    example.slurm  example_template.slurm  my_code.py
 
 Load the appropriate modules, and run ``my_code.py``. 
 
 .. code-block:: console
 
-   c205-004[clx](638)$ module load python3
-   c205-004[clx](639)$ python3 my_code.py
+   c205-004[clx](639)$ module load python3
+   c205-004[clx](640)$ python3 my_code.py
    The larger number of 51 and 20 is 51
 
 You can check the files that were generated using ``ls``, and see the contents of the file with ``cat``.
 
 .. code-block:: console
 
-   c205-004[clx](640)$ ls
+   c205-004[clx](641)$ ls
    duration.txt  example.slurm  example_template.slurm  my_code.py
-   c205-004[clx](641)$ cat duration
+   c205-004[clx](642)$ cat duration
    Done in 3.009739637374878 seconds.
 
 To exit an interactive session, you can use the command ``logout``.

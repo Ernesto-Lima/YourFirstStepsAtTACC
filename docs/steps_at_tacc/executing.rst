@@ -8,7 +8,7 @@ The code also includes a 3-second delay before finishing.
 .. code-block:: console
 
    [frontera]$ cdw
-   [frontera]$ Lab01
+   [frontera]$ cd Lab01
    [frontera]$ pwd
    /work2/02555/lima/frontera/Lab01
    [frontera]$ ls
@@ -150,7 +150,7 @@ and an error file named something similar to ``error.o6146935`` in the same dire
 
 .. code-block:: console
 
-   [frontera] $ ls results
+   [frontera] $ ls
    duration.txt  error.6146935  example.slurm  example_template.slurm  my_code.py  output.6146935
 
 **Congratulations! You ran a batch job on Frontera!**

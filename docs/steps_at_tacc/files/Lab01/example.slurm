@@ -18,6 +18,7 @@
 #SBATCH -t 0:30:00                         # Run time (hh:mm:ss), development queue max 2:00:00
 #SBATCH --mail-user=your_email@domaim.com  # Address email notifications
 #SBATCH --mail-type=all                    # Email at begin and end of job
+#SBATCH -A Frontera-Training               # Project/Allocation name (req'd if you have more than 1)
 
 # Everything below here should be Linux commands
 

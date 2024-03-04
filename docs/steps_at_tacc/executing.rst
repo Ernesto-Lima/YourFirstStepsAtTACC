@@ -39,6 +39,15 @@ to get a feel for how many resources you should use. Open ``example_template.slu
    #SBATCH -N 1                               # Total number of nodes (must be 1 for serial)
    #SBATCH -n 1                               # Total number of threas tasks requested (should be 1 for serial)
    #SBATCH -t 0:30:00                         # Run time (hh:mm:ss), development queue max 2:00:00
+   #SBATCH -A Frontera-Training               # Project/Allocation name (req'd if you have more than 1)
+
+   # Everything below here should be Linux commands
+
+   module load python3
+
+   python3 my_code.py
+
+The way this job is configured, it will load the appropriate modules, and run ``my_code.py``. 
 
 Text Editing with VIM
 ^^^^^^^^^^^^^^^^^^^^^
@@ -97,25 +106,6 @@ For more information, see:
   * `http://openvim.com/ <http://openvim.com/>`_
   * Or type on the command line: ``vimtutor``
 
-
-Note: If you have more than one allocation, you will need to add the following line and include the name of your project allocation.
-
-.. code-block:: console
-
-   #SBATCH -A                                 # Project/Allocation name (req'd if you have more than 1)
-
-Now, we need to provide instructions to the compute node on how to run ``my_code.py``. We need to load python and add the command to run the code. 
-Continue editing ``example_template.slurm`` with VIM, and add this to the bottom:
-
-.. code-block:: console
-
-   # Everything below here should be Linux commands
-
-   module load python3
-
-   python3 my_code.py
-
-The way this job is configured, it will load the appropriate modules, and run ``my_code.py``. 
 Once you have filled in the job description, save and quit the file. 
 Submit the job to the queue using the ``sbatch`` command`:
 

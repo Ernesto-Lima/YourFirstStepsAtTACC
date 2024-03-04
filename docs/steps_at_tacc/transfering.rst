@@ -161,7 +161,7 @@ This is just the basics of copying files. See example ``scp`` usage `here <https
 Exercise
 ^^^^^^^^
 
-1. Download the `lab files <https://github.com/Ernesto-Lima/YourFirstStepsAtTACC/raw/master/docs/steps_at_tacc/files/firststeps.zip>`_.
+1. Download the `file firststeps.zip <https://github.com/Ernesto-Lima/YourFirstStepsAtTACC/raw/master/docs/steps_at_tacc/files/firststeps.zip>`_.
 
 2. Login to Frontera.
 

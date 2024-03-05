@@ -54,7 +54,7 @@ To check all the versions of a package (e.g., Rstats):
 
 .. code-block:: console
 
-    [frontera]$ module avail Rstat
+    [frontera]$ module avail Rstats
 
     --------------- /opt/apps/intel19/impi19_0/modulefiles ---------------
          Rstats/3.6.3    Rstats/4.0.3 (D)

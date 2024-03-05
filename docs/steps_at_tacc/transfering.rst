@@ -51,48 +51,26 @@ a folder on Windows or Mac:
    [frontera]$ pwd
    /home1/02555/lima/folder1
 
-Now that we are inside ``folder1``, make a sub-folder:
+Use ``ls`` to list the contents. What do you expect to see?
 
 .. code-block:: console
 
-   [frontera]$ mkdir subfolder
-   [frontera]$ ls
-   subfolder
-
-Use ``cd`` to Navigate into ``subfolder``, then use ``ls`` to list the contents. What do you expect to see?
-
-.. code-block:: console
-
-   [frontera]$ cd subfolder
-   [frontera]$ pwd  
-   /home1/02555/lima/folder1/subfolder
    [frontera]$ ls
 
 There is nothing there because we have not made anything yet. Next, we will navigate back to the 
 home directory. So far we have seen how to navigate "down" into folders, but how do we navigate 
-back "up" to the parent folder? There are different ways to do it. For example, we could specify 
-the complete path of where we want to go:
+back "up" to the parent folder? There are different ways to do it. For example, we could use a shortcut, ``..``, 
+which refers to the **parent folder** - one level higher than the present location:
 
 .. code-block:: console
 
-   [frontera]$ pwd
-   /home1/02555/lima/folder1/subfolder
-   [frontera]$ cd /home1/02555/lima/folder1
-   [frontera]$ pwd
-   /home1/02555/lima/folder1
-
-Or, we could use a shortcut, ``..``, which refers to the **parent folder** - one level higher 
-than the present location:
-
-.. code-block:: console
-
-   [frontera]$ pwd
-   /home1/02555/lima/folder1
    [frontera]$ cd ..
    [frontera]$ pwd
    /home1/02555/lima
 
-We are back in our home directory. Finally, let's remove the directories we have made, using ``rm -r`` to remove our parent 
+We are back in our home directory. Instead, we could specify 
+the complete path of where we want to go, in this case ``cd /home1/02555/lima``.
+Finally, let's remove the directories we have made, using ``rm -r`` to remove our parent 
 folder ``folder1`` and its subfolders. The ``-r`` command line option recursively removes subfolders 
 and files located "down" the parent directory. ``-r`` is required for folders.
 

@@ -126,6 +126,21 @@ impact your own work, but also impact the system for others. For example, if you
 your quota in ``$WORK``, and your job is repeatedly trying (and failing) to write to ``$WORK``,
 you will stress that file system.
 
+``$HOME``
+
+* is backed up
+* Recommended Use: cron jobs, scripts and templates, environment settings, compilations
+
+``$WORK``
+
+* NOT backed up
+* Recommended Use: software installations, original datasets that can't be reproduced.
+
+``$SCRATCH``
+
+* NOT backed up, subject to purge if access time is more than 10 days old
+* Recommended Use: Reproducible datasets, I/O files: temporary files, checkpoint/restart files, job output files
+
 Another useful way to monitor your disk quotas (and TACC project balances) at any time is to execute:
 
 .. code-block:: console

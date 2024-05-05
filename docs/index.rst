@@ -32,8 +32,8 @@ Requirements
 ------------
 
 To participate in this workshop, you will need a TACC account and must have set up multi-factor authentication using a token app or SMS. 
-You can do this by visiting the `TACC portal <https://tacc.utexas.edu/portal/>`_, logging in, clicking on your username at the top right of the page, 
-selecting "Manage Account", and, under MFA Pairing, clicking to pair.
+You can do this by visiting the `TACC portal <https://tacc.utexas.edu/portal/dashboard/>`_, logging in, clicking on your username at the top right of the page, 
+selecting "Manage Account", and, under MFA Pairing, clicking to pair. You can find more details about MFA Pairing `here <https://docs.tacc.utexas.edu/basics/mfa/>`_.
 
 In your **TACC portal**, you can also view your allocations, open tickets, and the systems along with their current status.
 

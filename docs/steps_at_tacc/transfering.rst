@@ -81,7 +81,7 @@ and files located "down" the parent directory. ``-r`` is required for folders.
    folder2
 
 
-Trasnfering Files to and from Frontera
+Transfering Files to and from Frontera
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To practice transferring files to Frontera's ``$WORK`` and ``$SCRATCH``, we need to identify the path to our ``$WORK`` and ``$SCRATCH`` directory. 

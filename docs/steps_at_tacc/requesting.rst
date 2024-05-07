@@ -72,7 +72,6 @@ TACC offers three types of project allocations:
    ========= ===================== ================================================================================== ==================================================================================
    System    Startup SUs           Educational SUs                                                                    Research SUs
    ========= ===================== ================================================================================== ==================================================================================
-   Stampede2 2,100                 2,100                                                                              21,000
    Lonestar6 500                   500                                                                                Up to 100,000
    Maverick2 200                   200                                                                                2,100
    Frontera  CPU: 5,000 GPU: 3,000 `See Frontera Allocations <https://frontera-portal.tacc.utexas.edu/allocations/>`_ `See Frontera Allocations <https://frontera-portal.tacc.utexas.edu/allocations/>`_

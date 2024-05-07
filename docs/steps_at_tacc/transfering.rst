@@ -1,5 +1,5 @@
-Transfering Files
-=================
+Transferring Files
+==================
 
 Creating and Changing Folders
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

@@ -149,6 +149,47 @@ Exercise
 
 5. Login to Frontera, navigate to your ``$WORK``, and unzip the file using ``unzip firststeps.zip``.
 
+.. toggle:: Click to show the answer
+
+   1. Download the `file firststeps.zip <https://github.com/Ernesto-Lima/YourFirstStepsAtTACC/raw/master/docs/steps_at_tacc/files/firststeps.zip>`_.
+
+   2. Login to Frontera:
+
+      .. code-block:: console
+   
+         [local]$ ssh username@frontera.tacc.utexas.edu
+         (enter password)
+         (enter 6-digit token)
+   
+   3. Identify your ``$WORK`` directory path using ``cdw`` and ``pwd``.
+
+      .. code-block:: console
+   
+         [frontera]$ cdw
+         [frontera]$ pwd
+         /work2/02555/lima/frontera
+         [frontera]$ logout
+
+   4. From your local computer, copy the file ``firststeps.zip`` to Frontera. (You will need to know where the file ``firststeps.zip`` was downloaded on your local computer and navigate to this folder.)
+
+      .. code-block:: console
+
+         [local]$ scp firststeps.zip lima@frontera.tacc.utexas.edu:/work2/02555/lima/frontera
+         (enter password)
+         (enter token)
+
+   5. Login to Frontera, navigate to your ``$WORK``, and unzip the file using ``unzip firststeps.zip``.
+
+      .. code-block:: console
+         
+         [local]$ ssh username@frontera.tacc.utexas.edu
+         (enter password)
+         (enter 6-digit token)
+         [frontera]$ cdw
+         [frontera]$ unzip firststeps.zip
+
+
+
 Review of Topics Covered
 ^^^^^^^^^^^^^^^^^^^^^^^^
 

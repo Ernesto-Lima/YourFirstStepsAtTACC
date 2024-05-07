@@ -7,7 +7,7 @@ Creating and Changing Folders
 On a Windows or Mac desktop, our present location determines what files and folders
 we can access. I can "see" my present location visually with the help of the graphic
 interface - I could be looking at my Desktop, or the contents of a folder, for example.
-In a Linux command-line interface, we lack the same visual queues to tell us what our
+In a Linux command-line interface, we lack the same visual cues to tell us what our
 location is. Instead, we use a command - ``pwd`` (print working directory) - to tell
 us our present location. Try executing this command on Frontera:
 
@@ -60,7 +60,7 @@ Use ``ls`` to list the contents. What do you expect to see?
 There is nothing there because we have not made anything yet. Next, we will navigate back to the 
 home directory. So far we have seen how to navigate "down" into folders, but how do we navigate 
 back "up" to the parent folder? There are different ways to do it. For example, we could use a shortcut, ``..``, 
-which refers to the **parent folder** - one level higher than the present location:
+which refers to the **parent folder** - one level higher than the current location:
 
 .. code-block:: console
 

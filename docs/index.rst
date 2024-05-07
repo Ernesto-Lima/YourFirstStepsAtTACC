@@ -58,7 +58,7 @@ can affect others. TACC staff are always `available to help <https://www.tacc.ut
 
    steps_at_tacc/requesting
    steps_at_tacc/connecting
-   steps_at_tacc/transfering
+   steps_at_tacc/transferring
    steps_at_tacc/managing
    steps_at_tacc/running
    steps_at_tacc/understanding
